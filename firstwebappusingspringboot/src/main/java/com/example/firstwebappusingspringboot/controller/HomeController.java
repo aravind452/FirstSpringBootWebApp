@@ -1,4 +1,4 @@
-package com.example.firstwebappusingspringboot;
+package com.example.firstwebappusingspringboot.controller;
 
 
 import org.springframework.stereotype.Controller;
@@ -13,5 +13,5 @@ public class HomeController {
         return "Hello, World!";
     }
 
-    
+
 }
