@@ -3,13 +3,45 @@ package com.example.firstwebappusingspringboot.service;
 import java.util.*;
 
 import com.example.firstwebappusingspringboot.model.Product;
+import com.example.firstwebappusingspringboot.repo.ProductRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class ProductService {
 
-    List<Product> products = new ArrayList<>(Arrays.asList(new Product(101, "Iphone", 40000)));
+    @Autowired
+    ProductRepo productRepo;
+
+    public List<Product> getProducts() {
+        return productRepo.findAll();
+    }
+
+    public Product getProductById(int id) {
+        return productRepo.findById(id).orElse(new Product(100, "No item", 0));
+    }
+
+    public void addProduct(Product product) {
+        productRepo.save(product);
+    }
+
+    public void updateProduct(Product product) {
+        productRepo.save(product);
+    }
+
+    public void deleteProduct(int id) {
+        productRepo.deleteById(id);
+    }
+
+
+}
+
+
+// without jpa
+
+/*
+* List<Product> products = new ArrayList<>(Arrays.asList(new Product(101, "Iphone", 40000)));
 
     public List<Product> getProducts() {
         return products;
@@ -38,4 +70,4 @@ public class ProductService {
     public void deleteProduct(int id) {
         products.removeIf(p -> p.getProdId() == id);
     }
-}
+ */
