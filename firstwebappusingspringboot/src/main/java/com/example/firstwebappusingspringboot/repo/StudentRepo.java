@@ -1,10 +1,10 @@
 package com.example.firstwebappusingspringboot.repo;
 
 
-import com.example.firstwebappusingspringboot.model.Product;
+import com.example.firstwebappusingspringboot.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductRepo extends JpaRepository<Product, Integer> {
+public interface StudentRepo extends JpaRepository<Student, String> {
 }
