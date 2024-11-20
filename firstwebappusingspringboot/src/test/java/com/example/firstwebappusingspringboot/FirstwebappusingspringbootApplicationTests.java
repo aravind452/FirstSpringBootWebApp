@@ -19,9 +19,9 @@ class FirstwebappusingspringbootApplicationTests {
     @Autowired
     StudentRepo studentRepo;
 
-    @Test
-    void contextLoads() {
-    }
+//    @Test
+//    void contextLoads() {
+//    }
 
     @Test
     public void testSaveStudent() {
@@ -33,7 +33,9 @@ class FirstwebappusingspringbootApplicationTests {
         student.setRollNo("19cs282");
 
         studentService.saveStudent(student);
-        assertEquals("aravind", student.getName());
+        assertEquals("aravind", student.getName(),"employee name should match");
+        assertEquals(789999, student.getPhone());
+
 
 
     }
@@ -41,4 +43,3 @@ class FirstwebappusingspringbootApplicationTests {
 }
 
 
-// controller layer consists of handler methods. it will handle all the incoming requests and responses,
